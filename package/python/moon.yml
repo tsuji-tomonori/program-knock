@@ -1,0 +1,38 @@
+language: python
+type: application
+tasks:
+  install:
+    command: uv sync --dev
+    options:
+      cache: false
+
+  lint:
+    command: uv run ruff check .
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.py'
+      - 'tests/**/*.py'
+
+  typecheck:
+    command: uv run mypy src/
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.py'
+      - 'tests/**/*.py'
+
+  test:
+    command: uv run pytest tests/
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.py'
+      - 'tests/**/*.py'
+
+  check:
+    description: "Run lint, type checking, and tests"
+    deps:
+      - ~:lint
+      - ~:typecheck
+      - ~:test
