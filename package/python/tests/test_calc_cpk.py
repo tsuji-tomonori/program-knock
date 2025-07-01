@@ -107,3 +107,33 @@ def test_10_k_equals_1():
     cpk_val = calc_cpk(param)
     # k=1 なら (1-k)*Cp=0
     assert cpk_val == 0.0
+
+
+def test_11_large_dataset():
+    """
+    大規模データセットでのパフォーマンステスト。
+    10,000点のデータを用いて計算が正常に実行されることを確認。
+    """
+    import random
+
+    random.seed(42)  # 再現可能な結果のため
+    data = [5.0 + random.gauss(0, 0.5) for _ in range(10000)]
+    param = Param(usl=10.0, lsl=0.0, data=data)
+    cpk_val = calc_cpk(param)
+    # 大規模データでもCpkが妥当な範囲内であることを確認
+    assert 0.0 <= cpk_val <= 5.0
+
+
+def test_12_extreme_values():
+    """
+    極端な値での計算テスト。
+    非常に大きな上下限値と大きなデータ値でのテスト。
+    """
+    param = Param(
+        usl=1000000.0,
+        lsl=-1000000.0,
+        data=[500000.0, 500001.0, 499999.0, 500000.5, 499999.5],
+    )
+    cpk_val = calc_cpk(param)
+    # 極端な値でも正常に計算されることを確認
+    assert cpk_val > 100000  # 非常に大きな工程能力になることを期待

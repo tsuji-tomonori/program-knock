@@ -124,3 +124,35 @@ def test_output_1000_entries():
     param = Param(end_time=1000, period=1, logs=logs)
     expected = [i + 1 for i in range(1001)]
     assert count_connections(param) == expected
+
+
+def test_boundary_period_equals_end_time():
+    """
+    period が end_time と等しい場合のテスト。
+    end_time=10, period=10 の場合、結果として [10, 10] が期待される。
+    """
+    param = Param(
+        end_time=10,
+        period=10,
+        logs=[
+            Log(0, 10, 0),
+        ],
+    )
+    assert count_connections(param) == [10, 10]
+
+
+def test_overlapping_connections_and_disconnections():
+    """
+    接続と切断が重複して発生する場合のテスト。
+    同じ時刻で接続と切断が同時に発生する状況をテスト。
+    """
+    param = Param(
+        end_time=5,
+        period=1,
+        logs=[
+            Log(0, 5, 0),
+            Log(2, 3, 2),  # 時刻2で3接続、2切断
+            Log(4, 0, 6),  # 時刻4で全て切断
+        ],
+    )
+    assert count_connections(param) == [5, 5, 6, 6, 0, 0]
