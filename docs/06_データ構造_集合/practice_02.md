@@ -11,21 +11,7 @@
 
 ## 入力
 
-以下の `remove_duplicate_products` 関数を実装してください。
-
-```python
-def remove_duplicate_products(products: list[tuple[str, int]]) -> list[tuple[str, int]]:
-    """
-    購入商品のリストから重複を排除し、価格の高い順に並べたリストを返す関数。
-
-    Args:
-        products (list[tuple[str, int]]): 商品名と価格のタプルのリスト
-
-    Returns:
-        list[tuple[str, int]]: 重複を除いた上で価格の高い順に並べた商品リスト
-    """
-    ...
-```
+- `products` (タプルのリスト): 商品名と価格のタプルのリスト。各タプルは (商品名, 価格) の形式
 
 ### 入力値の条件
 
@@ -37,14 +23,12 @@ def remove_duplicate_products(products: list[tuple[str, int]]) -> list[tuple[str
 
 ## 出力
 
-- **list[tuple[str, int]]**:
-  - `products` から **同じ商品名の重複を排除** し、**価格が高い順にソート** したリストを返してください。
-  - 価格が同じ場合、**先に登場した順序** を保持してください。
+- **タプルのリスト**: `products` から同じ商品名の重複を排除し、価格が高い順にソートしたリストを返します。価格が同じ場合、先に登場した順序を保持します。
 
 ## サンプル1
-```python
-assert remove_duplicate_products([("apple", 300), ("banana", 200), ("apple", 250), ("orange", 400)]) == [("orange", 400), ("apple", 300), ("banana", 200)]
-```
+**入力:** `[("apple", 300), ("banana", 200), ("apple", 250), ("orange", 400)]`
+
+**出力:** `[("orange", 400), ("apple", 300), ("banana", 200)]`
 
 
 **解説**
@@ -53,9 +37,9 @@ assert remove_duplicate_products([("apple", 300), ("banana", 200), ("apple", 250
 - `"apple"` の次に `"banana"` の順番で並ぶ。
 
 ## サンプル2
-```python
-assert remove_duplicate_products([("watch", 5000), ("watch", 5000), ("ring", 7000), ("ring", 6500)]) == [("ring", 7000), ("watch", 5000)]
-```
+**入力:** `[("watch", 5000), ("watch", 5000), ("ring", 7000), ("ring", 6500)]`
+
+**出力:** `[("ring", 7000), ("watch", 5000)]`
 
 
 **解説**
@@ -63,9 +47,9 @@ assert remove_duplicate_products([("watch", 5000), ("watch", 5000), ("ring", 700
 - `"ring"` は `7000` と `6500` があるが、高い方の `7000` を採用。
 
 ## サンプル3
-```python
-assert remove_duplicate_products([("pen", 100), ("notebook", 200), ("eraser", 50), ("pen", 150)]) == [("pen", 150), ("notebook", 200), ("eraser", 50)]
-```
+**入力:** `[("pen", 100), ("notebook", 200), ("eraser", 50), ("pen", 150)]`
+
+**出力:** `[("pen", 150), ("notebook", 200), ("eraser", 50)]`
 
 
 **解説**
@@ -75,18 +59,18 @@ assert remove_duplicate_products([("pen", 100), ("notebook", 200), ("eraser", 50
 - **価格の降順に並べ替え** るため `"pen"` が `"notebook"` より上位になる。
 
 ## サンプル4
-```python
-assert remove_duplicate_products([]) == []
-```
+**入力:** `[]`
+
+**出力:** `[]`
 
 
 **解説**
 - 入力リストが空なので、空のリストを返す。
 
 ## サンプル5
-```python
-assert remove_duplicate_products([("bag", 1200), ("shoes", 3000), ("bag", 1000), ("hat", 2500)]) == [("shoes", 3000), ("hat", 2500), ("bag", 1200)]
-```
+**入力:** `[("bag", 1200), ("shoes", 3000), ("bag", 1000), ("hat", 2500)]`
+
+**出力:** `[("shoes", 3000), ("hat", 2500), ("bag", 1200)]`
 
 
 **解説**

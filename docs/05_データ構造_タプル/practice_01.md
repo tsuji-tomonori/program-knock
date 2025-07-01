@@ -16,28 +16,14 @@
 
 ## 入力
 
-```python
-from typing import NamedTuple
+### 売上データ（Sale）
+- `store` (文字列): 店舗名
+- `payment_method` (文字列): 支払い方法
+- `product` (文字列): 商品名
+- `quantity` (整数): 売上数量（1以上の整数）
 
-class Sale(NamedTuple):
-    store: str  # 店舗名
-    payment_method: str  # 支払い方法
-    product: str  # 商品名
-    quantity: int  # 売上数量（1以上の整数）
-
-
-def count_sales(sales: list[Sale]) -> dict[tuple[str, str, str], int]:
-    """
-    各 (店舗名, 支払い方法, 商品名) ごとの売上数量を集計する関数.
-
-    Args:
-        sales (list[Sale]): 売上データのリスト
-
-    Returns:
-        dict[tuple[str, str, str], int]: (店舗名, 支払い方法, 商品名) をキーとし、売上数量を値とする辞書
-    """
-    ...
-```
+### パラメータ
+- `sales` (リスト): 売上データのリスト
 
 ### 入力値の条件
 
@@ -49,30 +35,27 @@ def count_sales(sales: list[Sale]) -> dict[tuple[str, str, str], int]:
 
 ## 出力
 
-- **辞書 (dict[tuple[str, str, str], int])**:
-  `(店舗名, 支払い方法, 商品名)` のタプルをキーとし、売上数量の合計を値とする辞書を返してください。
+- **タプルと整数の辞書**: `(店舗名, 支払い方法, 商品名)` のタプルをキーとし、売上数量の合計を値とする辞書を返します。
 
 ## サンプル1
 
-```python
-def test_basic():
-    sales = [
-        Sale("Tokyo", "Credit", "Apple", 3),
-        Sale("Tokyo", "Cash", "Apple", 2),
-        Sale("Osaka", "Credit", "Apple", 5),
-        Sale("Tokyo", "Credit", "Apple", 1),
-        Sale("Osaka", "Credit", "Orange", 4),
-        Sale("Tokyo", "Cash", "Banana", 2),
-        Sale("Tokyo", "Credit", "Apple", 2),
-    ]
+**入力:**
+売上データのリスト:
+- (「Tokyo」, 「Credit」, 「Apple」, 3)
+- (「Tokyo」, 「Cash」, 「Apple」, 2)
+- (「Osaka」, 「Credit」, 「Apple」, 5)
+- (「Tokyo」, 「Credit」, 「Apple」, 1)
+- (「Osaka」, 「Credit」, 「Orange」, 4)
+- (「Tokyo」, 「Cash」, 「Banana」, 2)
+- (「Tokyo」, 「Credit」, 「Apple」, 2)
 
-    assert count_sales(sales) == {
-        ("Tokyo", "Credit", "Apple"): 6,
-        ("Tokyo", "Cash", "Apple"): 2,
-        ("Osaka", "Credit", "Apple"): 5,
-        ("Osaka", "Credit", "Orange"): 4,
-        ("Tokyo", "Cash", "Banana"): 2,
-    }
+**出力:**
+```
+{("Tokyo", "Credit", "Apple"): 6,
+ ("Tokyo", "Cash", "Apple"): 2,
+ ("Osaka", "Credit", "Apple"): 5,
+ ("Osaka", "Credit", "Orange"): 4,
+ ("Tokyo", "Cash", "Banana"): 2}
 ```
 
 **解説**
@@ -90,11 +73,9 @@ def test_basic():
 
 ## サンプル2
 
-```python
-def test_empty():
-    sales = []
-    assert count_sales(sales) == {}
-```
+**入力:** 空のリスト
+
+**出力:** `{}`
 
 **解説**
 
@@ -102,20 +83,18 @@ def test_empty():
 
 ## サンプル3
 
-```python
-def test_multiple_payment_methods():
-    sales = [
-        Sale("Tokyo", "Credit", "Apple", 4),
-        Sale("Tokyo", "Cash", "Apple", 5),
-        Sale("Tokyo", "Credit", "Apple", 3),
-        Sale("Tokyo", "MobilePay", "Apple", 2),
-    ]
+**入力:**
+売上データのリスト:
+- (「Tokyo」, 「Credit」, 「Apple」, 4)
+- (「Tokyo」, 「Cash」, 「Apple」, 5)
+- (「Tokyo」, 「Credit」, 「Apple」, 3)
+- (「Tokyo」, 「MobilePay」, 「Apple」, 2)
 
-    assert count_sales(sales) == {
-        ("Tokyo", "Credit", "Apple"): 7,
-        ("Tokyo", "Cash", "Apple"): 5,
-        ("Tokyo", "MobilePay", "Apple"): 2,
-    }
+**出力:**
+```
+{("Tokyo", "Credit", "Apple"): 7,
+ ("Tokyo", "Cash", "Apple"): 5,
+ ("Tokyo", "MobilePay", "Apple"): 2}
 ```
 
 **解説**

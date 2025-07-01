@@ -17,19 +17,7 @@
 
 ## 入力
 
-```python
-def simulate_langtons_ant(steps: int) -> list[tuple[int, int]]:
-    """
-    ラングトンのアリを指定したステップ数移動させた後の黒いマスの座標を求める。
-
-    Args:
-        steps (int): アリが移動するステップ数 (0 <= steps <= 10_000)
-
-    Returns:
-        list[tuple[int, int]]: 黒いマスの座標のリスト。各座標は (x, y) のタプル形式で返す。
-    """
-    ...
-```
+- `steps` (整数): アリが移動するステップ数
 
 ### 入力値の条件
 - `steps (int)`: `0 <= steps <= 10,000`
@@ -42,25 +30,28 @@ def simulate_langtons_ant(steps: int) -> list[tuple[int, int]]:
   - 黒いマスがない場合は **空リスト `[]`** を返す。
 
 ## サンプル1
-```python
-assert simulate_langtons_ant(0) == []
-```
+
+**入力:** `steps = 0`
+
+**出力:** `[]`
 
 **解説**
 - まだ移動していないため、黒いマスは存在しない。
 
 ## サンプル2
-```python
-assert simulate_langtons_ant(1) == [(0, 0)]
-```
+
+**入力:** `steps = 1`
+
+**出力:** `[(0, 0)]`
 
 **解説**
 - 初期位置 `(0, 0)` が白なので、黒に変更 → 右を向いて `(1, 0)` に移動。
 
 ## サンプル3
-```python
-assert simulate_langtons_ant(5) == [(0, -1), (1, -1), (1, 0)]
-```
+
+**入力:** `steps = 5`
+
+**出力:** `[(0, -1), (1, -1), (1, 0)]`
 
 **解説**
 1. `(0, 0)`: 白 → 黒, **右向き** → `(1, 0)` に移動

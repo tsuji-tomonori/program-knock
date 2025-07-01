@@ -8,42 +8,16 @@ LRU（Least Recently Used）キャッシュは、使用頻度の低いデータ�
 
 ## 入力
 
-```python
-class LRUCache:
-    def __init__(self, capacity: int):
-        """
-        LRU キャッシュを初期化する。
+### LRUキャッシュのコンストラクタ
+- `capacity` (整数): キャッシュの最大容量（1以上）
 
-        Args:
-            capacity (int): キャッシュの最大容量（1以上）
-        """
-        ...
+### getメソッド
+- `key` (整数): 検索するキー
+- 戻り値: キーに対応する値、または -1
 
-    def get(self, key: int) -> int:
-        """
-        指定されたキーに対応する値を取得する。
-        キーがキャッシュに存在しない場合は -1 を返す。
-
-        Args:
-            key (int): 検索するキー
-
-        Returns:
-            int: キーに対応する値、または -1
-        """
-        ...
-
-    def put(self, key: int, value: int) -> None:
-        """
-        指定されたキーと値をキャッシュに格納する。
-        すでにキーが存在する場合は値を更新する。
-        容量を超えた場合は、最も長い間使われていないキーを削除する。
-
-        Args:
-            key (int): 格納するキー
-            value (int): 格納する値
-        """
-        ...
-```
+### putメソッド
+- `key` (整数): 格納するキー
+- `value` (整数): 格納する値
 
 ### 挙動
 
@@ -57,22 +31,14 @@ class LRUCache:
 
 ## サンプル1
 
-```python
-import pytest
-from src.lru_cache import LRUCache
-
-def test_lru_cache():
-    cache = LRUCache(2)  # 容量 2 の LRU キャッシュを作成
-
-    cache.put(1, 1)
-    cache.put(2, 2)
-    assert cache.get(1) == 1  # 1 はキャッシュに存在する
-
-    cache.put(3, 3)  # 2 が削除される（LRU ルールによる）
-    assert cache.get(2) == -1  # 2 は削除されたため取得できない
-
-    cache.put(4, 4)  # 1 が削除される（LRU ルールによる）
-    assert cache.get(1) == -1  # 1 は削除されたため取得できない
-    assert cache.get(3) == 3  # 3 はキャッシュに残っている
-    assert cache.get(4) == 4  # 4 はキャッシュに残っている
-```
+**操作手順:**
+1. 容量2のLRUキャッシュを作成
+2. `put(1, 1)` - キー1に値1を格納
+3. `put(2, 2)` - キー2に値2を格納
+4. `get(1)` → 出力: `1`
+5. `put(3, 3)` - キー3に値3を格納（キー2が削除される）
+6. `get(2)` → 出力: `-1`
+7. `put(4, 4)` - キー4に値4を格納（キー1が削除される）
+8. `get(1)` → 出力: `-1`
+9. `get(3)` → 出力: `3`
+10. `get(4)` → 出力: `4`

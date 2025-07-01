@@ -10,33 +10,10 @@
 
 ## 入力
 
-```python
-from typing import NamedTuple
+- `ages` (整数のリスト): 社員の年齢リスト
+  - 各年齢は 0 以上 120 以下
+  - リストは空ではない
 
-
-class Param(NamedTuple):
-    ages: list[int]  # 社員の年齢リスト (0 <= ages[i] <= 120)
-
-
-def count_age_statistics(param: Param) -> tuple[int, int, float, int]:
-    """
-    年齢分布を集計する関数
-
-    Args:
-        param (Param): 社員の年齢データ
-
-    Returns:
-        tuple[int, int, float, int]: (最大年齢, 最小年齢, 平均年齢, 平均年齢以下の社員の人数)
-    """
-    ...
-```
-
-### 入力値の条件
-
-- `ages`:
-  - 社員の年齢を表す整数のリスト。
-  - 各年齢は `0` 以上 `120` 以下。
-  - リストは空ではない。
 
 ## 出力
 
@@ -48,15 +25,10 @@ def count_age_statistics(param: Param) -> tuple[int, int, float, int]:
 
 ## サンプル1
 
-```python
-import src.age_statistics as t
+**入力:**
+- `ages`: `[25, 30, 35, 40, 45, 50]`
 
-def test_basic():
-    param = t.Param(
-        ages=[25, 30, 35, 40, 45, 50]
-    )
-    assert t.count_age_statistics(param) == (50, 25, 37.5, 3)
-```
+**出力:** `(50, 25, 37.5, 3)`
 
 **解説**
 
@@ -69,13 +41,10 @@ def test_basic():
 
 ## サンプル2
 
-```python
-def test_varied_ages():
-    param = t.Param(
-        ages=[18, 22, 22, 24, 29, 35, 40, 50, 60]
-    )
-    assert t.count_age_statistics(param) == (60, 18, 33.33, 5)
-```
+**入力:**
+- `ages`: `[18, 22, 22, 24, 29, 35, 40, 50, 60]`
+
+**出力:** `(60, 18, 33.33, 5)`
 
 **解説**
 

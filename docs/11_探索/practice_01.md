@@ -8,19 +8,8 @@
 
 ## 入力
 
-```python
-def find_closest_value(arr: list[int], target: int) -> int:
-    """
-    ソート済みの整数配列から、指定された値に最も近い値を返す。
-
-    Args:
-        arr (list[int]): ソートされた整数のリスト (要素数は 1 以上)
-        target (int): 探索値
-
-    Returns:
-        int: arr 内で target に最も近い値
-    """
-```
+- `arr` (整数のリスト): ソートされた整数のリスト (要素数は 1 以上)
+- `target` (整数): 探索値
 
 ### 入力条件
 
@@ -41,9 +30,8 @@ def find_closest_value(arr: list[int], target: int) -> int:
 
 ## サンプル1
 
-```python
-assert find_closest_value([1, 3, 5, 7, 9], 6) == 5
-```
+**入力:** `arr = [1, 3, 5, 7, 9]`, `target = 6`
+**出力:** `5`
 
 **解説**
 
@@ -53,9 +41,8 @@ assert find_closest_value([1, 3, 5, 7, 9], 6) == 5
 
 ## サンプル2
 
-```python
-assert find_closest_value([2, 4, 6, 8, 10], 7) == 6
-```
+**入力:** `arr = [2, 4, 6, 8, 10]`, `target = 7`
+**出力:** `6`
 
 **解説**
 
@@ -63,9 +50,8 @@ assert find_closest_value([2, 4, 6, 8, 10], 7) == 6
 
 ## サンプル3
 
-```python
-assert find_closest_value([1, 2, 3, 4, 5], 10) == 5
-```
+**入力:** `arr = [1, 2, 3, 4, 5]`, `target = 10`
+**出力:** `5`
 
 **解説**
 
@@ -73,9 +59,8 @@ assert find_closest_value([1, 2, 3, 4, 5], 10) == 5
 
 ## サンプル4
 
-```python
-assert find_closest_value([-10, -5, 0, 5, 10], -7) == -5
-```
+**入力:** `arr = [-10, -5, 0, 5, 10]`, `target = -7`
+**出力:** `-5`
 
 **解説**
 
@@ -83,9 +68,8 @@ assert find_closest_value([-10, -5, 0, 5, 10], -7) == -5
 
 ## サンプル5
 
-```python
-assert find_closest_value([10], 7) == 10
-```
+**入力:** `arr = [10]`, `target = 7`
+**出力:** `10`
 
 **解説**
 

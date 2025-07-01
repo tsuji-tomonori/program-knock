@@ -15,28 +15,14 @@ K-means クラスタリングは以下の手順で動作します。
 
 ## 入力
 
-```python
-from typing import List, Tuple
-
-def k_means_clustering(points: List[Tuple[float, float]], k: int, max_iter: int = 100) -> List[int]:
-    """
-    K-meansクラスタリングを実装する関数。
-
-    Args:
-        points (List[Tuple[float, float]]): 2次元のデータ点のリスト。
-        k (int): クラスタ数（1以上）。
-        max_iter (int): 最大反復回数（デフォルト100）。
-
-    Returns:
-        List[int]: 各データ点が属するクラスタのインデックス（0 以上 k-1 の整数）。
-    """
-    ...
-```
+- `points` (リスト): 2次元のデータ点のリスト。各点は (x, y) の形式で、x, y は実数。
+- `k` (整数): クラスタ数（1以上）。
+- `max_iter` (整数): 最大反復回数（デフォルト100）。
 
 ### 入力値の条件
 
 - `points`:
-  - `points[i]` は `(x, y)` の形式で、`x, y` は実数 (`float`)。
+  - `points[i]` は `(x, y)` の形式で、`x, y` は実数。
   - `1 <= len(points) <= 1000`
 - `k`:
   - `1 <= k <= min(10, len(points))`
@@ -45,21 +31,15 @@ def k_means_clustering(points: List[Tuple[float, float]], k: int, max_iter: int 
 
 ## 出力
 
-- **List[int]**:
-  - 各データ点が属するクラスタのインデックス（`0` 以上 `k-1` の整数）をリストで返します。
+- **整数のリスト**: 各データ点が属するクラスタのインデックス（`0` 以上 `k-1` の整数）をリストで返します。
 
 ## サンプル1
 
-```python
-from mymodule import k_means_clustering
+**入力:**
+- `points`: [(1.0, 2.0), (1.5, 1.8), (5.0, 8.0), (8.0, 8.0), (1.0, 0.6), (9.0, 11.0)]
+- `k`: 2
 
-def test_basic():
-    points = [(1.0, 2.0), (1.5, 1.8), (5.0, 8.0), (8.0, 8.0), (1.0, 0.6), (9.0, 11.0)]
-    k = 2
-    result = k_means_clustering(points, k)
-    assert len(result) == len(points)
-    assert all(0 <= cluster < k for cluster in result)
-```
+**出力:** 長さ6のリスト（各要素は0または1）
 
 **解説**
 
@@ -68,13 +48,11 @@ def test_basic():
 
 ## サンプル2
 
-```python
-def test_single_cluster():
-    points = [(1.0, 2.0), (2.0, 3.0), (3.0, 4.0)]
-    k = 1
-    result = k_means_clustering(points, k)
-    assert result == [0, 0, 0]  # すべての点がクラスタ0に属する
-```
+**入力:**
+- `points`: [(1.0, 2.0), (2.0, 3.0), (3.0, 4.0)]
+- `k`: 1
+
+**出力:** `[0, 0, 0]`
 
 **解説**
 
@@ -82,13 +60,11 @@ def test_single_cluster():
 
 ## サンプル3
 
-```python
-def test_three_clusters():
-    points = [(1.0, 1.0), (2.0, 2.0), (10.0, 10.0), (11.0, 11.0), (50.0, 50.0)]
-    k = 3
-    result = k_means_clustering(points, k)
-    assert len(set(result)) == 3  # 3つのクラスタに分類される
-```
+**入力:**
+- `points`: [(1.0, 1.0), (2.0, 2.0), (10.0, 10.0), (11.0, 11.0), (50.0, 50.0)]
+- `k`: 3
+
+**出力:** 3つの異なるクラスタに分類される整数のリスト
 
 **解説**
 

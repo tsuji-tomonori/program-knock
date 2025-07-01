@@ -9,42 +9,22 @@
 サーバーには、以下の形式で接続情報がログとして保存されています。
 
 - **時刻 (time)**: 接続・切断のアクションが発生した時間（単位は整数で、0 以上 1000 以下）
-- **新規接続端末数 (n\_connect)**: この時間に新たに接続した端末の数
-- **新規切断端末数 (n\_disconnect)**: この時間に切断された端末の数
+- **新規接続端末数 (n_connect)**: この時間に新たに接続した端末の数
+- **新規切断端末数 (n_disconnect)**: この時間に切断された端末の数
 
-指定された時刻の範囲に対して、一定間隔での接続数を出力する関数を実装してください。
+指定された時刻の範囲に対して、一定間隔での接続数を出力してください。
 
 ## 入力
 
-```python
-from typing import NamedTuple
+### ログデータ（Log）
+- `time` (整数): 時刻（0 ≤ time ≤ 1000、同一時刻のログは存在しない）
+- `n_connect` (整数): 新規接続台数（0 ≤ n_connect）
+- `n_disconnect` (整数): 新規切断台数（0 ≤ n_disconnect、合計接続数を超えない）
 
-
-class Log(NamedTuple):
-    time: int  # 時刻 0 <= time <= 1000, 同一時刻のログは存在しない
-    n_connect: int  # 新規接続台数 0 <= n_connect
-    n_disconnect: int  # 新規切断台数 0 <= n_disconnect, 合計接続数を超えない
-
-
-class Param(NamedTuple):
-    end_time: int  # 集計終了時刻 0 <= end_time <= 1000
-    period: int  # 集計間隔 1 <= period <= end_time
-    logs: list[Log]  # ログデータ
-
-def count_connections(param: Param) -> list[int]:
-    """
-    ある期間ごとの接続数を出力する関数.
-    接続数は0より小さくならない。また、時刻0にログがない場合は接続数は0として扱う。
-
-    Args:
-        param (Param): 接続情報
-
-    Returns:
-        list[int]: ある期間ごとの接続数
-    """
-    ...
-```
-
+### パラメータ（Param）
+- `end_time` (整数): 集計終了時刻（0 ≤ end_time ≤ 1000）
+- `period` (整数): 集計間隔（1 ≤ period ≤ end_time）
+- `logs` (リスト): ログデータのリスト
 
 ### 入力値の条件
 
@@ -70,25 +50,22 @@ def count_connections(param: Param) -> list[int]:
 
 ## 出力
 
-- **list[int]**: 指定された時間の範囲を period の間隔ごとに分割し、各期間の接続数をリストとして出力します。
+- **整数のリスト**: 指定された時間の範囲を period の間隔ごとに分割し、各期間の接続数をリストとして出力します。
 
 各期間の接続数は、時刻 0 から end_time までの接続および切断の情報をもとに計算します。リストの各要素は、各 period ごとの時刻における接続数を示します。
 
 ## サンプル1
 
-```python
-param = Param(
-    end_time=5,
-    period=1,
-    logs=[
-        Log(0, 3, 0),
-        Log(1, 2, 0),
-        Log(4, 5, 2),
-        Log(5, 3, 5),
-    ],
-)
-assert count_connections(param) == [3, 5, 5, 5, 8, 6]
-```
+**入力:**
+- `end_time`: 5
+- `period`: 1
+- `logs`:
+  - 時刻0: 接続3台、切断0台
+  - 時刻1: 接続2台、切断0台
+  - 時刻4: 接続5台、切断2台
+  - 時刻5: 接続3台、切断5台
+
+**出力:** `[3, 5, 5, 5, 8, 6]`
 
 **解説**
 
@@ -104,10 +81,12 @@ assert count_connections(param) == [3, 5, 5, 5, 8, 6]
 
 ## サンプル2
 
-```python
-param = Param(end_time=3, period=1, logs=[])
-assert count_connections(param) == [0, 0, 0, 0]
-```
+**入力:**
+- `end_time`: 3
+- `period`: 1
+- `logs`: 空のリスト
+
+**出力:** `[0, 0, 0, 0]`
 
 **解説**
 
@@ -115,18 +94,15 @@ assert count_connections(param) == [0, 0, 0, 0]
 
 ## サンプル3
 
-```python
-param = Param(
-    end_time=6,
-    period=2,
-    logs=[
-    Log(1, 4, 0),
-    Log(3, 1, 1),
-    Log(6, 3, 2),
-    ],
-)
-assert count_connections(param) == [0, 4, 4, 5]
-```
+**入力:**
+- `end_time`: 6
+- `period`: 2
+- `logs`:
+  - 時刻1: 接続4台、切断0台
+  - 時刻3: 接続1台、切断1台
+  - 時刻6: 接続3台、切断2台
+
+**出力:** `[0, 4, 4, 5]`
 
 **解説**
 

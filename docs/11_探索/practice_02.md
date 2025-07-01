@@ -6,21 +6,9 @@
 
 ## 入力
 
-```python
-def count_in_range(arr: list[int], l: int, r: int) -> int:
-    """
-    ソート済みの配列から指定範囲 [l, r] に含まれる要素の個数を求める関数。
-
-    Args:
-        arr (list[int]): ソート済みの整数配列（昇順）。
-        l (int): 範囲の下限。
-        r (int): 範囲の上限。
-
-    Returns:
-        int: 範囲 [l, r] に含まれる要素の個数。
-    """
-    ...
-```
+- `arr` (整数のリスト): ソート済みの整数配列（昇順）
+- `l` (整数): 範囲の下限
+- `r` (整数): 範囲の上限
 
 ### 入力の制約
 
@@ -36,12 +24,8 @@ def count_in_range(arr: list[int], l: int, r: int) -> int:
 
 ## サンプル1
 
-```python
-def test_basic_case():
-    arr = [1, 3, 5, 7, 9, 11]
-    l, r = 4, 8
-    assert count_in_range(arr, l, r) == 2  # 5, 7 の2つ
-```
+**入力:** `arr = [1, 3, 5, 7, 9, 11]`, `l = 4`, `r = 8`
+**出力:** `2`
 
 **解説**
 - `arr = [1, 3, 5, 7, 9, 11]` のソート済み配列が与えられています
@@ -51,12 +35,8 @@ def test_basic_case():
 
 ## サンプル2
 
-```python
-def test_negative_numbers():
-    arr = [-5, -3, -1, 2, 4, 6, 8, 10]
-    l, r = -2, 5
-    assert count_in_range(arr, l, r) == 3  # -1, 2, 4 の3つ
-```
+**入力:** `arr = [-5, -3, -1, 2, 4, 6, 8, 10]`, `l = -2`, `r = 5`
+**出力:** `3`
 
 **解説**
 - `arr = [-5, -3, -1, 2, 4, 6, 8, 10]` というソート済み配列が与えられます
@@ -66,12 +46,8 @@ def test_negative_numbers():
 
 ## サンプル3
 
-```python
-def test_out_of_range():
-    arr = [1, 2, 3, 4, 5]
-    l, r = 6, 10
-    assert count_in_range(arr, l, r) == 0  # 範囲に該当なし
-```
+**入力:** `arr = [1, 2, 3, 4, 5]`, `l = 6`, `r = 10`
+**出力:** `0`
 
 **解説**
 - `arr = [1, 2, 3, 4, 5]` というソート済み配列が与えられます
@@ -81,12 +57,8 @@ def test_out_of_range():
 
 ## サンプル4
 
-```python
-def test_partial_range():
-    arr = [10, 20, 30, 40, 50]
-    l, r = 15, 45
-    assert count_in_range(arr, l, r) == 3  # 20, 30, 40 の3つ
-```
+**入力:** `arr = [10, 20, 30, 40, 50]`, `l = 15`, `r = 45`
+**出力:** `3`
 
 **解説**
 - `arr = [10, 20, 30, 40, 50]` というソート済み配列が与えられます

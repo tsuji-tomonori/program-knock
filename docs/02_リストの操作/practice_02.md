@@ -21,18 +21,8 @@
 
 ## 入力
 
-```python
-def next_generation(board: list[list[int]]) -> list[list[int]]:
-    """
-    ライフゲームの1ステップ分のシミュレーションを行い、次の世代の盤面を返す。
-
-    Args:
-        board (list[list[int]]): 現在の盤面（`m × n` の二次元リスト）
-
-    Returns:
-        list[list[int]]: 次の世代の盤面（`m × n` の二次元リスト）
-    """
-```
+- `board` (m × n の二次元リスト): 現在の盤面
+  - 各要素は 0（死滅）または 1（生存）
 
 ### 入力の制約
 - `1 <= m, n <= 50` （盤面のサイズ）
@@ -45,20 +35,22 @@ def next_generation(board: list[list[int]]) -> list[list[int]]:
 
 ## サンプル1
 
-#### 入力:
-```python
-def test_case_1():
-    board = [
-        [0, 1, 0],
-        [0, 1, 1],
-        [1, 0, 0]
-    ]
-    expected = [
-        [0, 1, 1],
-        [1, 0, 1],
-        [0, 1, 0]
-    ]
-    assert next_generation(board) == expected
+**入力:**
+```
+[
+    [0, 1, 0],
+    [0, 1, 1],
+    [1, 0, 0]
+]
+```
+
+**出力:**
+```
+[
+    [0, 1, 1],
+    [1, 0, 1],
+    [0, 1, 0]
+]
 ```
 
 **解説**
@@ -70,19 +62,22 @@ def test_case_1():
 
 ### サンプル2
 
-```python
-def test_case_2():
-    board = [
-        [1, 1, 1],
-        [1, 1, 1],
-        [1, 1, 1]
-    ]
-    expected = [
-        [1, 0, 1],
-        [0, 0, 0],
-        [1, 0, 1]
-    ]
-    assert next_generation(board) == expected
+**入力:**
+```
+[
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1]
+]
+```
+
+**出力:**
+```
+[
+    [1, 0, 1],
+    [0, 0, 0],
+    [1, 0, 1]
+]
 ```
 
 **解説**

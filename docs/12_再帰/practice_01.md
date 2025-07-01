@@ -32,18 +32,7 @@ AWS CLI (Command Line Interface) では、さまざまな AWS サービスに対
 
 ## 入力
 
-```python
-def suggest_aws_service(wrong_service: str) -> str:
-    """
-    誤った AWS サービス名を受け取り、最も類似する正しいサービス名をサジェストする。
-
-    Args:
-        wrong_service (str): 誤入力されたサービス名
-
-    Returns:
-        str: 最も類似する AWS サービス名
-    """
-```
+- `wrong_service` (文字列): 誤入力された AWS サービス名
 
 ### 入力の制約
 
@@ -56,9 +45,8 @@ def suggest_aws_service(wrong_service: str) -> str:
 
 ## サンプル1
 
-```python
-assert suggest_aws_service("lamda") == "lambda"
-```
+**入力:** `"lamda"`
+**出力:** `"lambda"`
 
 **解説**
 
@@ -67,9 +55,8 @@ assert suggest_aws_service("lamda") == "lambda"
 
 ## サンプル2
 
-```python
-assert suggest_aws_service("s33") == "s3"
-```
+**入力:** `"s33"`
+**出力:** `"s3"`
 
 **解説**
 
@@ -78,9 +65,8 @@ assert suggest_aws_service("s33") == "s3"
 
 ## サンプル3
 
-```python
-assert suggest_aws_service("rts") == "rds"
-```
+**入力:** `"rts"`
+**出力:** `"rds"`
 
 **解説**
 
@@ -89,9 +75,8 @@ assert suggest_aws_service("rts") == "rds"
 
 ## サンプル4
 
-```python
-assert suggest_aws_service("cloudfrot") == "cloudfront"
-```
+**入力:** `"cloudfrot"`
+**出力:** `"cloudfront"`
 
 **解説**
 

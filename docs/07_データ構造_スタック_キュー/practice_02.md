@@ -18,19 +18,7 @@
 
 ## 入力
 
-```python
-def sushi_seating(commands: list[str]) -> list[str]:
-    """
-    回転寿司屋の席案内システムを実装する関数。
-
-    Args:
-        commands (list[str]): 到着・席案内のコマンドリスト
-
-    Returns:
-        list[str]: 案内されたお客さんのリスト
-    """
-    ...
-```
+- `commands` (文字列のリスト): 到着・席案内のコマンドリスト
 
 ### 入力値の条件
 
@@ -47,19 +35,23 @@ def sushi_seating(commands: list[str]) -> list[str]:
 
 # サンプル1
 
-```python
+**入力:**
+```
 commands = [
     "arrive Alice",
     "arrive Bob",
-    "seat 1",
+    "seat 1", 
     "arrive Charlie",
     "seat 2",
     "arrive Dave",
     "arrive Eve",
     "seat 3"
 ]
+```
 
-assert sushi_seating(commands) == ["Alice", "Bob", "Charlie", "Dave", "Eve"]
+**出力:**
+```
+["Alice", "Bob", "Charlie", "Dave", "Eve"]
 ```
 
 **解説**
@@ -75,7 +67,8 @@ assert sushi_seating(commands) == ["Alice", "Bob", "Charlie", "Dave", "Eve"]
 
 ## サンプル2
 
-```python
+**入力:**
+```
 commands = [
     "arrive Tom",
     "arrive Jerry",
@@ -84,8 +77,11 @@ commands = [
     "arrive Butch",
     "seat 2"
 ]
+```
 
-assert sushi_seating(commands) == ["Tom", "Jerry", "Spike", "Butch"]
+**出力:**
+```
+["Tom", "Jerry", "Spike", "Butch"]
 ```
 
 **解説**
@@ -99,14 +95,18 @@ assert sushi_seating(commands) == ["Tom", "Jerry", "Spike", "Butch"]
 
 ## サンプル3
 
-```python
+**入力:**
+```
 commands = [
     "arrive Anna",
     "arrive Elsa",
     "seat 5"
 ]
+```
 
-assert sushi_seating(commands) == ["Anna", "Elsa"]
+**出力:**
+```
+["Anna", "Elsa"]
 ```
 
 **解説**

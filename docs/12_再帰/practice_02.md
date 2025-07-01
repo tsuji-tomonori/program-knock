@@ -10,22 +10,10 @@
 
 ## 入力
 
-```python
-def flood_fill(image: list[list[int]], sr: int, sc: int, new_color: int) -> list[list[int]]:
-    """
-    画像内の特定の領域を、新しい色で塗りつぶす。
-
-    Args:
-        image (list[list[int]]): 2次元のグリッド画像
-        sr (int): 開始行のインデックス
-        sc (int): 開始列のインデックス
-        new_color (int): 塗りつぶしに使用する色
-
-    Returns:
-        list[list[int]]: 塗りつぶし後の画像
-    """
-    ...
-```
+- `image` (2次元整数配列): 2次元のグリッド画像
+- `sr` (整数): 開始行のインデックス
+- `sc` (整数): 開始列のインデックス
+- `new_color` (整数): 塗りつぶしに使用する色
 
 ### 制約
 
@@ -41,16 +29,20 @@ def flood_fill(image: list[list[int]], sr: int, sc: int, new_color: int) -> list
 - `flood_fill` は、座標 `(sr, sc)` から開始し、同じ値の隣接セル（上下左右）を `new_color` で塗りつぶした 2 次元リストを返す。
 
 ## サンプル1
-```python
+
+**入力:**
+```
 image = [
     [1, 1, 0],
     [1, 0, 1],
     [0, 1, 1]
 ]
-sr, sc, new_color = 1, 2, 0
+sr = 1, sc = 2, new_color = 0
+```
 
-result = flood_fill(image, sr, sc, new_color)
-assert result == [
+**出力:**
+```
+[
     [1, 1, 0],
     [1, 0, 0],
     [0, 0, 0]
@@ -62,16 +54,20 @@ assert result == [
 - `(2,2)`, `(2,1)` も `1` なので `0` に変更
 
 ## サンプル2
-```python
+
+**入力:**
+```
 image = [
     [1, 1, 1],
     [1, 1, 0],
     [1, 0, 1]
 ]
-sr, sc, new_color = 1, 1, 2
+sr = 1, sc = 1, new_color = 2
+```
 
-result = flood_fill(image, sr, sc, new_color)
-assert result == [
+**出力:**
+```
+[
     [2, 2, 2],
     [2, 2, 0],
     [2, 0, 1]
@@ -83,18 +79,23 @@ assert result == [
 - `(0,0)`, `(0,1)`, `(0,2)`, `(1,0)`, `(1,1)` も `2` に変更
 
 ## サンプル3
-```python
+
+**入力:**
+```
 image = [
     [0, 0, 0],
     [0, 1, 1]
 ]
-sr, sc, new_color = 1, 1, 1
+sr = 1, sc = 1, new_color = 1
+```
 
-result = flood_fill(image, sr, sc, new_color)
-assert result == [
+**出力:**
+```
+[
     [0, 0, 0],
     [0, 1, 1]
-]  # 変更なし
+]
+# 変更なし
 ```
 
 **解説**

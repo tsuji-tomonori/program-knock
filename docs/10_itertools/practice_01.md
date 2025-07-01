@@ -10,19 +10,7 @@
 
 ## 入力
 
-```python
-def run_length_encoding(s: str) -> list[tuple[str, int]]:
-    """
-    文字列をランレングス符号化する関数
-
-    Args:
-        s (str): 符号化する文字列（1文字以上）
-
-    Returns:
-        list[tuple[str, int]]: ランレングス符号化されたリスト
-    """
-    ...
-```
+- `s` (文字列): 符号化する文字列（1文字以上）
 
 ### 入力の制約
 
@@ -38,9 +26,8 @@ def run_length_encoding(s: str) -> list[tuple[str, int]]:
 
 ## サンプル1
 
-```python
-assert run_length_encoding("aaabbcdddd") == [("a", 3), ("b", 2), ("c", 1), ("d", 4)]
-```
+**入力:** `"aaabbcdddd"`
+**出力:** `[("a", 3), ("b", 2), ("c", 1), ("d", 4)]`
 
 **解説**
 - `"a"` が 3 回連続
@@ -50,18 +37,16 @@ assert run_length_encoding("aaabbcdddd") == [("a", 3), ("b", 2), ("c", 1), ("d",
 
 ## サンプル2
 
-```python
-assert run_length_encoding("abc") == [("a", 1), ("b", 1), ("c", 1)]
-```
+**入力:** `"abc"`
+**出力:** `[("a", 1), ("b", 1), ("c", 1)]`
 
 **解説**
 - すべての文字が単独で現れるため、それぞれ 1 回ずつ。
 
 ## サンプル3
 
-```python
-assert run_length_encoding("aaaaaaa") == [("a", 7)]
-```
+**入力:** `"aaaaaaa"`
+**出力:** `[("a", 7)]`
 
 **解説**
 - `"a"` が 7 回連続。

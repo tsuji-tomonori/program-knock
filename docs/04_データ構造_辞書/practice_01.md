@@ -8,19 +8,7 @@
 
 ## 入力
 
-```python
-def count_word_frequencies(text: str) -> dict[str, int]:
-    """
-    入力されたテキスト中の各単語の出現回数をカウントする関数.
-
-    Args:
-        text (str): 空白区切りの単語を含む文字列。
-
-    Returns:
-        dict[str, int]: 各単語をキーとし、その出現回数を値とする辞書。
-    """
-    ...
-```
+- `text` (文字列): 空白区切りの単語を含む文字列
 
 ### 入力値の条件
 
@@ -31,21 +19,13 @@ def count_word_frequencies(text: str) -> dict[str, int]:
 
 ## 出力
 
-- **辞書型 (`dict[str, int]`)**:
-  - 各単語をキーとし、その出現回数を値とする辞書を返します。
-  - 出現回数が高い順、同じ場合は辞書のキーの辞書順で並べる。
+- **文字列と整数の辞書**: 各単語をキーとし、その出現回数を値とする辞書を返します。出現回数が高い順、同じ場合は辞書のキーの辞書順で並べる。
 
 ## サンプル1
 
-```python
-def test_basic():
-    text = "apple banana apple orange banana apple"
-    assert count_word_frequencies(text) == {
-        "apple": 3,
-        "banana": 2,
-        "orange": 1
-    }
-```
+**入力:** `"apple banana apple orange banana apple"`
+
+**出力:** `{"apple": 3, "banana": 2, "orange": 1}`
 
 **解説**
 
@@ -56,13 +36,9 @@ def test_basic():
 
 ## サンプル2
 
-```python
-def test_single_word():
-    text = "python"
-    assert count_word_frequencies(text) == {
-        "python": 1
-    }
-```
+**入力:** `"python"`
+
+**出力:** `{"python": 1}`
 
 **解説**
 
@@ -71,15 +47,9 @@ def test_single_word():
 
 ## サンプル3
 
-```python
-def test_tied_frequencies():
-    text = "dog cat bird cat dog bird"
-    assert count_word_frequencies(text) == {
-        "bird": 2,
-        "cat": 2,
-        "dog": 2
-    }
-```
+**入力:** `"dog cat bird cat dog bird"`
+
+**出力:** `{"bird": 2, "cat": 2, "dog": 2}`
 
 **解説**
 
@@ -88,11 +58,9 @@ def test_tied_frequencies():
 
 ## サンプル4
 
-```python
-def test_empty_string():
-    text = ""
-    assert count_word_frequencies(text) == {}
-```
+**入力:** `""`
+
+**出力:** `{}`
 
 **解説**
 

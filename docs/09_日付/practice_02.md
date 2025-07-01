@@ -8,37 +8,17 @@
 
 ## 入力
 
-```python
-from typing import NamedTuple
+会議室予約システムでは、以下のデータを扱います：
 
+- `Reservation` (予約情報):
+  - `room_id` (整数): 会議室ID (1 <= room_id <= 100)
+  - `start_time` (整数): 予約開始時間 (0 <= start_time < end_time <= 1000)
+  - `end_time` (整数): 予約終了時間 (start_time < end_time <= 1000)
 
-class Reservation(NamedTuple):
-    room_id: int  # 会議室ID (1 <= room_id <= 100)
-    start_time: int  # 予約開始時間 (0 <= start_time < end_time <= 1000)
-    end_time: int  # 予約終了時間 (start_time < end_time <= 1000)
+- `RoomReservation` (予約システム):
+  - `request_reservation(reservation)` メソッドで予約をリクエスト
 
-
-class RoomReservation:
-    def __init__(self):
-        """会議室予約システムの初期化"""
-        pass
-
-    def request_reservation(self, reservation: Reservation) -> bool:
-        """
-        会議室の予約をリクエストする。
-
-        予約が承認される場合は True を返し、拒否される場合は False を返す。
-
-        Args:
-            reservation (Reservation): 予約リクエストの情報。
-
-        Returns:
-            bool: 予約が受理された場合 True、拒否された場合 False。
-        """
-        pass
-```
-
-## 入力
+### 入力の制約
 
 - `room_id` は 1 以上 100 以下の整数。
 - `start_time` と `end_time` は 0 以上 1000 以下の整数で、`start_time < end_time` が常に成り立つ。
@@ -51,15 +31,14 @@ class RoomReservation:
 
 ## サンプル1
 
-```python
-def test_basic():
-    system = RoomReservation()
-    assert system.request_reservation(Reservation(1, 10, 20)) == True  # 予約成功
-    assert system.request_reservation(Reservation(1, 15, 25)) == False  # 時間が重複しているため拒否
-    assert system.request_reservation(Reservation(1, 20, 30)) == True  # 予約成功
-    assert system.request_reservation(Reservation(2, 10, 20)) == True  # 別の会議室なので予約成功
-    assert system.request_reservation(Reservation(2, 15, 25)) == False  # 会議室2の予約が重複
-```
+以下の順序で予約をリクエストします：
+
+**入力:**
+1. `Reservation(1, 10, 20)` → **出力:** `True`
+2. `Reservation(1, 15, 25)` → **出力:** `False`
+3. `Reservation(1, 20, 30)` → **出力:** `True`
+4. `Reservation(2, 10, 20)` → **出力:** `True`
+5. `Reservation(2, 15, 25)` → **出力:** `False`
 
 **解説**
 
@@ -76,13 +55,12 @@ def test_basic():
 
 ## サンプル2
 
-```python
-def test_edge_cases():
-    system = RoomReservation()
-    assert system.request_reservation(Reservation(1, 0, 500)) == True  # 長時間予約成功
-    assert system.request_reservation(Reservation(1, 500, 1000)) == True  # 予約時間が連続するが重ならない
-    assert system.request_reservation(Reservation(1, 499, 501)) == False  # 予約時間が重なるため拒否
-```
+以下の順序で予約をリクエストします：
+
+**入力:**
+1. `Reservation(1, 0, 500)` → **出力:** `True`  
+2. `Reservation(1, 500, 1000)` → **出力:** `True`
+3. `Reservation(1, 499, 501)` → **出力:** `False`
 
 **解説**
 

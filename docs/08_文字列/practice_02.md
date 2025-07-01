@@ -8,22 +8,11 @@
 
 ## 入力
 
-```python
-def is_fake_chinese(text: str) -> str:
-    """
-    文字列がすべて漢字であるかを判定する関数.
+- `text` (文字列): 判定対象の文字列
 
-    Args:
-        text (str): 判定対象の文字列
+### 入力の制約
 
-    Returns:
-        str: "正" (すべて漢字の場合), "誤" (それ以外の文字が含まれる場合)
-    """
-```
-
-## 入力
-
-- `text` (str): 1 文字以上 100 文字以下の文字列
+- `text`: 1 文字以上 100 文字以下の文字列
 
 ## 出力
 
@@ -32,9 +21,8 @@ def is_fake_chinese(text: str) -> str:
 
 ## サンプル1
 
-```python
-assert is_fake_chinese("漢字") == "正"
-```
+**入力:** `"漢字"`
+**出力:** `"正"`
 
 **解説**
 
@@ -42,9 +30,8 @@ assert is_fake_chinese("漢字") == "正"
 
 ## サンプル2
 
-```python
-assert is_fake_chinese("漢字テスト") == "誤"
-```
+**入力:** `"漢字テスト"`
+**出力:** `"誤"`
 
 **解説**
 
@@ -52,9 +39,8 @@ assert is_fake_chinese("漢字テスト") == "誤"
 
 ## サンプル3
 
-```python
-assert is_fake_chinese("中国語") == "正"
-```
+**入力:** `"中国語"`
+**出力:** `"正"`
 
 **解説**
 
@@ -62,9 +48,8 @@ assert is_fake_chinese("中国語") == "正"
 
 ## サンプル4
 
-```python
-assert is_fake_chinese("123") == "誤"
-```
+**入力:** `"123"`
+**出力:** `"誤"`
 
 **解説**
 
@@ -72,9 +57,8 @@ assert is_fake_chinese("123") == "誤"
 
 ## サンプル5
 
-```python
-assert is_fake_chinese("漢123字") == "誤"
-```
+**入力:** `"漢123字"`
+**出力:** `"誤"`
 
 **解説**
 

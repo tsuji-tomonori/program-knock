@@ -37,42 +37,23 @@ $Cpk$ を計算する関数を作成してください。
 
 ## 入力
 
-```python
-from typing import NamedTuple
+以下の3つの値を入力として受け取ります：
 
-
-class Param(NamedTuple):
-    usl: float # 規格上限値
-    lsl: float # 規格下限値
-    data: list[float] # 工程から得られたサンプルデータのリスト データは1件以上
-
-
-def calc_cpk(param: Param) -> float:
-    """
-    工程能力指数を計算する関数.
-
-    Args:
-        param (Param): 計算に必要な値
-
-    Returns:
-        list[int]: 工程能力指数(cpk) 小数点第4位で四捨五入
-    """
-    ...
-```
+- `usl` (浮動小数点数): 規格上限値
+- `lsl` (浮動小数点数): 規格下限値
+- `data` (浮動小数点数のリスト): 工程から得られたサンプルデータのリスト（データは1件以上）
 
 ## 出力
 `calc_cpk` 関数は、工程能力指数 (**Cpk**) を **小数点第4位で四捨五入した浮動小数点数値**として返してください。
 
 ## サンプル 1
-```python
-def test_basic_1():
-    param = Param(
-        usl=10.0,
-        lsl=2.0,
-        data=[4.5, 5.0, 4.8, 5.2, 5.5]
-    )
-    assert calc_cpk(param) == 2.626
-```
+
+**入力:**
+- `usl`: `10.0`
+- `lsl`: `2.0`
+- `data`: `[4.5, 5.0, 4.8, 5.2, 5.5]`
+
+**出力:** `2.626`
 
 **解説**:
 - $USL = 10.0$
