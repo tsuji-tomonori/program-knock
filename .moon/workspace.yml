@@ -5,6 +5,7 @@ $schema: './cache/schemas/workspace.json'
 
 projects:
   python: 'package/python'
+  java: 'package/java'
 vcs:
   manager: 'git'
   defaultBranch: 'main'

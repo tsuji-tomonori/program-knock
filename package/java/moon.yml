@@ -1,0 +1,21 @@
+language: java
+type: application
+tasks:
+  build:
+    command: mkdir -p build/classes && javac -d build/classes -cp build/classes src/main/java/com/programknock/*.java
+    options:
+      cache: false
+    inputs:
+      - 'src/**/*.java'
+
+  test:
+    command: javac -cp lib/junit-platform-console-standalone-1.9.2.jar:build/classes -d build/classes src/test/java/com/programknock/*.java && java -jar lib/junit-platform-console-standalone-1.9.2.jar --class-path build/classes --scan-class-path
+    deps:
+      - ~:build
+    inputs:
+      - 'src/**/*.java'
+
+  check:
+    description: "Run tests"
+    deps:
+      - ~:test
