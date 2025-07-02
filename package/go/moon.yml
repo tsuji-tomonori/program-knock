@@ -1,0 +1,47 @@
+language: go
+type: application
+
+tasks:
+  install:
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go mod tidy'
+    options:
+      cache: false
+
+  lint:
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && golangci-lint run'
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.go'
+      - 'tests/**/*.go'
+
+  typecheck:
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go vet ./...'
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.go'
+      - 'tests/**/*.go'
+
+  test:
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go test ./...'
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.go'
+      - 'tests/**/*.go'
+
+  build:
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go build ./...'
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.go'
+
+  check:
+    description: "Run lint, type checking, build, and tests"
+    deps:
+      - ~:lint
+      - ~:typecheck  
+      - ~:build
+      - ~:test

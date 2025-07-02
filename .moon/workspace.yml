@@ -7,6 +7,7 @@ projects:
   python: 'package/python'
   java: 'package/java'
   typescript: 'package/typescript'
+  go: 'package/go'
 vcs:
   manager: 'git'
   defaultBranch: 'main'
