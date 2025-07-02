@@ -40,7 +40,7 @@
 commands = [
     "arrive Alice",
     "arrive Bob",
-    "seat 1", 
+    "seat 1",
     "arrive Charlie",
     "seat 2",
     "arrive Dave",

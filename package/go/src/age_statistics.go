@@ -31,7 +31,7 @@ func AnalyzeAgeDistribution(ages []int) AgeStatistics {
 	}
 
 	avgAge := math.Round(float64(sum)/float64(len(ages))*100) / 100
-	
+
 	countBelowAvg := 0
 	for _, age := range ages {
 		if float64(age) <= avgAge {

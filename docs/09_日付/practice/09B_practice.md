@@ -58,7 +58,7 @@
 以下の順序で予約をリクエストします：
 
 **入力:**
-1. `Reservation(1, 0, 500)` → **出力:** `True`  
+1. `Reservation(1, 0, 500)` → **出力:** `True`
 2. `Reservation(1, 500, 1000)` → **出力:** `True`
 3. `Reservation(1, 499, 501)` → **出力:** `False`
 
