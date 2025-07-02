@@ -1,0 +1,32 @@
+language: rust
+type: application
+
+tasks:
+  build:
+    command: 'cargo build'
+    inputs:
+      - 'src/**/*.rs'
+      - 'Cargo.toml'
+
+  lint:
+    command: 'cargo clippy'
+    deps:
+      - ~:build
+    inputs:
+      - 'src/**/*.rs'
+      - 'Cargo.toml'
+
+  test:
+    command: 'cargo test'
+    deps:
+      - ~:build
+    inputs:
+      - 'src/**/*.rs'
+      - 'Cargo.toml'
+
+  check:
+    description: "Run build, lint, and tests"
+    deps:
+      - ~:build
+      - ~:lint
+      - ~:test
