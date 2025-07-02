@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id 'com.github.spotbugs' version '6.0.7'
 }
 
 repositories {
@@ -8,13 +10,16 @@ repositories {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // SpotBugs annotations
+    compileOnly 'com.github.spotbugs:spotbugs-annotations:4.8.3'
 }
 
 test {
@@ -25,8 +30,58 @@ test {
     }
 }
 
-tasks.register('check') {
-    dependsOn test
-    description 'Run all checks (tests)'
+// Checkstyle configuration
+checkstyle {
+    toolVersion = '10.12.4'
+    configFile = file('config/checkstyle/checkstyle.xml')
+    ignoreFailures = false
+}
+
+checkstyleMain {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+checkstyleTest {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+// SpotBugs configuration
+spotbugs {
+    ignoreFailures = false
+    effort = 'max'
+    reportLevel = 'medium'
+}
+
+spotbugsMain {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+spotbugsTest {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+// Custom lint task that runs both checkstyle and spotbugs
+tasks.register('lint') {
+    dependsOn checkstyleMain, checkstyleTest, spotbugsMain, spotbugsTest
+    description 'Run all linting tools (checkstyle and spotbugs)'
+    group 'verification'
+}
+
+// Override default check task to include linting
+tasks.named('check') {
+    dependsOn lint, test
+    description 'Run all checks (lint and tests)'
     group 'verification'
 }

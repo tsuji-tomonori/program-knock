@@ -2,20 +2,30 @@ language: java
 type: application
 tasks:
   build:
-    command: mkdir -p build/classes && javac -d build/classes -cp build/classes src/main/java/com/programknock/*.java
+    command: gradle build
     options:
       cache: false
     inputs:
       - 'src/**/*.java'
+      - 'build.gradle'
+      - 'config/**/*'
 
   test:
-    command: javac -cp lib/junit-platform-console-standalone-1.9.2.jar:build/classes -d build/classes src/test/java/com/programknock/*.java && java -jar lib/junit-platform-console-standalone-1.9.2.jar --class-path build/classes --scan-class-path
-    deps:
-      - ~:build
+    command: gradle test
     inputs:
       - 'src/**/*.java'
+      - 'build.gradle'
+
+  lint:
+    command: gradle lint
+    inputs:
+      - 'src/**/*.java'
+      - 'build.gradle'
+      - 'config/**/*'
 
   check:
     description: "Run tests"
     deps:
+      - ~:build
+      - ~:lint
       - ~:test

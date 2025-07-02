@@ -1,6 +1,7 @@
 package com.programknock;
 
 import java.util.List;
+import java.util.Objects;
 
 public class AgeStatistics {
 
@@ -26,6 +27,11 @@ public class AgeStatistics {
                    minAge == that.minAge &&
                    Double.compare(that.avgAge, avgAge) == 0 &&
                    countBelowAvg == that.countBelowAvg;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(maxAge, minAge, avgAge, countBelowAvg);
         }
     }
 
