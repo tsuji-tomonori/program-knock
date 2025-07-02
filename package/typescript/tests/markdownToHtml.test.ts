@@ -1,4 +1,4 @@
-import { markdownToHtml } from './markdownToHtml';
+import { markdownToHtml } from '../src/markdownToHtml';
 
 describe('MarkdownToHtml', () => {
   test('sample', () => {

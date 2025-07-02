@@ -1,4 +1,4 @@
-import { isFakeChinese } from './fakeChineseChecker';
+import { isFakeChinese } from '../src/fakeChineseChecker';
 
 describe('isFakeChinese', () => {
   test('sample 1', () => {

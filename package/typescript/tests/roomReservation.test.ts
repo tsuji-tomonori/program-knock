@@ -1,4 +1,4 @@
-import { RoomReservation } from './roomReservation';
+import { RoomReservation } from '../src/roomReservation';
 
 describe('RoomReservation', () => {
   test('non-overlapping reservations', () => {

@@ -1,4 +1,4 @@
-import { calculateNewYearHoliday } from './calculateNewYearHoliday';
+import { calculateNewYearHoliday } from '../src/calculateNewYearHoliday';
 
 describe('calculateNewYearHoliday', () => {
   test('sample 1 - year 2025', () => {

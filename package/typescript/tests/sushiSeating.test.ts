@@ -1,4 +1,4 @@
-import { sushiSeating } from './sushiSeating';
+import { sushiSeating } from '../src/sushiSeating';
 
 describe('SushiSeating', () => {
   test('sample_1', () => {

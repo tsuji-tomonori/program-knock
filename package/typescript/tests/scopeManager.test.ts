@@ -1,4 +1,4 @@
-import { ScopeManager } from './scopeManager';
+import { ScopeManager } from '../src/scopeManager';
 
 describe('ScopeManager', () => {
   test('sample1', () => {

@@ -1,4 +1,4 @@
-import { analyzeAgeDistribution } from './ageStatistics';
+import { analyzeAgeDistribution } from '../src/ageStatistics';
 
 describe('ageStatistics', () => {
   test('sample 1', () => {

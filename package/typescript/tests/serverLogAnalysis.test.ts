@@ -1,4 +1,4 @@
-import { filterSuccessfulRequests, countRequestsByIp } from './serverLogAnalysis';
+import { filterSuccessfulRequests, countRequestsByIp } from '../src/serverLogAnalysis';
 
 describe('ServerLogAnalysis', () => {
   describe('filterSuccessfulRequests', () => {

@@ -1,4 +1,4 @@
-import { countConnections, Log, CountConnectionsParam } from './countConnections';
+import { countConnections, Log, CountConnectionsParam } from '../src/countConnections';
 
 describe('countConnections', () => {
   test('basic test case', () => {

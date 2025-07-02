@@ -1,4 +1,4 @@
-import { runLengthEncoding } from './runLengthEncoding';
+import { runLengthEncoding } from '../src/runLengthEncoding';
 
 describe('runLengthEncoding', () => {
   // サンプルテストケース

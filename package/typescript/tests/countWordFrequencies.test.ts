@@ -1,4 +1,4 @@
-import { countWordFrequencies } from './countWordFrequencies';
+import { countWordFrequencies } from '../src/countWordFrequencies';
 
 describe('countWordFrequencies', () => {
   test('basic test', () => {

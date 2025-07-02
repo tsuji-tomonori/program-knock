@@ -1,4 +1,4 @@
-import { countSales, Sale } from './countSales';
+import { countSales, Sale } from '../src/countSales';
 
 describe('countSales', () => {
   // サンプル1

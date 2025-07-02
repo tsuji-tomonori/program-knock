@@ -1,4 +1,4 @@
-import { floodFill } from './floodFill';
+import { floodFill } from '../src/floodFill';
 
 describe('floodFill', () => {
   test('sample 1', () => {

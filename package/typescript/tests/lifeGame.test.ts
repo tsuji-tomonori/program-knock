@@ -1,4 +1,4 @@
-import { nextGeneration } from './lifeGame';
+import { nextGeneration } from '../src/lifeGame';
 
 describe('nextGeneration', () => {
   test('empty board', () => {

@@ -1,4 +1,4 @@
-import { removeDuplicateCustomers } from './removeDuplicateCustomers';
+import { removeDuplicateCustomers } from '../src/removeDuplicateCustomers';
 
 describe('RemoveDuplicateCustomers', () => {
   test('sample1', () => {

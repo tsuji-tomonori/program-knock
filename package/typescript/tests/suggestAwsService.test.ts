@@ -1,4 +1,4 @@
-import { suggestAwsService } from './suggestAwsService';
+import { suggestAwsService } from '../src/suggestAwsService';
 
 describe('SuggestAwsService', () => {
   // サンプルテストケースおよび境界値テスト

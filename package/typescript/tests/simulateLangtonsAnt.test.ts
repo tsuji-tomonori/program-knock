@@ -1,4 +1,4 @@
-import { simulateLangtonsAnt } from './simulateLangtonsAnt';
+import { simulateLangtonsAnt } from '../src/simulateLangtonsAnt';
 
 describe('SimulateLangtonsAnt', () => {
   test('steps_0', () => {

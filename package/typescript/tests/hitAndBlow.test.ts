@@ -1,4 +1,4 @@
-import { hitAndBlow } from './hitAndBlow';
+import { hitAndBlow } from '../src/hitAndBlow';
 
 describe('hitAndBlow', () => {
   test('case 1', () => {

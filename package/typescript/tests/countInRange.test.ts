@@ -1,4 +1,4 @@
-import { countInRange } from './countInRange';
+import { countInRange } from '../src/countInRange';
 
 describe('countInRange', () => {
   test('basic case', () => {

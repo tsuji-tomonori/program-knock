@@ -1,4 +1,4 @@
-import { kmeansClusteringSimple } from './kmeansClusteringSimple';
+import { kmeansClusteringSimple } from '../src/kmeansClusteringSimple';
 
 describe('KMeansClusteringSimple', () => {
   test('sample_1', () => {

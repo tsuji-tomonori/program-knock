@@ -1,4 +1,4 @@
-import { deduplicateProducts } from './productDeduplication';
+import { deduplicateProducts } from '../src/productDeduplication';
 
 describe('ProductDeduplication', () => {
   test('sample_1', () => {

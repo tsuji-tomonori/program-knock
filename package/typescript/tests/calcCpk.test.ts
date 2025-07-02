@@ -1,4 +1,4 @@
-import { calcCpk } from './calcCpk';
+import { calcCpk } from '../src/calcCpk';
 
 describe('calcCpk', () => {
   test('basic calculation sample 1', () => {

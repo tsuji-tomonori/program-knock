@@ -1,4 +1,4 @@
-import { findClosestValue } from './findClosestValue';
+import { findClosestValue } from '../src/findClosestValue';
 
 describe('findClosestValue', () => {
   test('sample 1', () => {
