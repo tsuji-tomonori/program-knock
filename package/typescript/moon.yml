@@ -1,0 +1,36 @@
+language: typescript
+type: application
+
+tasks:
+  install:
+    command: npm install
+    options:
+      cache: false
+
+  lint:
+    command: npm run lint
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.ts'
+
+  typecheck:
+    command: npm run typecheck
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.ts'
+
+  test:
+    command: npm run test
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.ts'
+
+  check:
+    description: "Run lint, type checking, and tests"
+    deps:
+      - ~:lint
+      - ~:typecheck
+      - ~:test
