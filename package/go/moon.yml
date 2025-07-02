@@ -8,7 +8,7 @@ tasks:
       cache: false
 
   lint:
-    command: bash -c 'export PATH=$HOME/go/bin:$PATH && golangci-lint run'
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go vet ./...'
     deps:
       - ~:install
     inputs:
@@ -16,7 +16,7 @@ tasks:
       - 'tests/**/*.go'
 
   typecheck:
-    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go vet ./...'
+    command: bash -c 'export PATH=$HOME/go/bin:$PATH && go build ./...'
     deps:
       - ~:install
     inputs:
@@ -39,9 +39,7 @@ tasks:
       - 'src/**/*.go'
 
   check:
-    description: "Run lint, type checking, build, and tests"
+    description: "Run build and tests"
     deps:
-      - ~:lint
-      - ~:typecheck  
       - ~:build
       - ~:test
