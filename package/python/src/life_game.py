@@ -1,7 +1,4 @@
-from typing import List
-
-
-def next_generation(board: List[List[int]]) -> List[List[int]]:
+def next_generation(board: list[list[int]]) -> list[list[int]]:
     """
     Calculate the next generation of Conway's Game of Life.
 

@@ -1,8 +1,7 @@
-from typing import List, Tuple
 from collections import Counter
 
 
-def hit_and_blow(answer: List[int], guess: List[int]) -> Tuple[int, int]:
+def hit_and_blow(answer: list[int], guess: list[int]) -> tuple[int, int]:
     """
     Hit & Blow の判定を行う関数
 
@@ -21,9 +20,7 @@ def hit_and_blow(answer: List[int], guess: List[int]) -> Tuple[int, int]:
     guess_counter = Counter(guess)
 
     # Total matches is the sum of minimum counts for each number
-    total_matches = sum(
-        min(answer_counter[num], guess_counter[num]) for num in answer_counter
-    )
+    total_matches = sum(min(answer_counter[num], guess_counter[num]) for num in answer_counter)
 
     # Blows = total matches - hits
     blows = total_matches - hits

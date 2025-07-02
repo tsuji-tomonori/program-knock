@@ -1,7 +1,4 @@
-from typing import List, Tuple
-
-
-def analyze_age_distribution(ages: List[int]) -> Tuple[int, int, float, int]:
+def analyze_age_distribution(ages: list[int]) -> tuple[int, int, float, int]:
     """
     Analyze age distribution and return statistics.
 

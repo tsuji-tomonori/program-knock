@@ -1,7 +1,7 @@
 class ScopeManager:
-    def __init__(self):
+    def __init__(self) -> None:
         # 最初からグローバルスコープを用意する。
-        self.scopes = [{}]
+        self.scopes: list[dict[str, int]] = [{}]
 
     def enter_scope(self) -> None:
         """

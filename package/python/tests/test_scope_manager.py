@@ -31,9 +31,7 @@ def test_sample2():
     assert sm.get_variable("y") == 5  # 外側のスコープから "y" を取得
 
     sm.exit_scope()
-    assert (
-        sm.get_variable("z") is None
-    )  # 内側のスコープが破棄されたため "z" は存在しない
+    assert sm.get_variable("z") is None  # 内側のスコープが破棄されたため "z" は存在しない
 
 
 # サンプルテストケース3
@@ -42,9 +40,7 @@ def test_sample3():
     assert sm.get_variable("unknown") is None  # 未設定の変数は None
 
     sm.enter_scope()
-    assert (
-        sm.get_variable("unknown") is None
-    )  # 内側のスコープでも見つからない場合は None
+    assert sm.get_variable("unknown") is None  # 内側のスコープでも見つからない場合は None
 
 
 # サンプルテストケース4

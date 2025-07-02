@@ -1,4 +1,4 @@
-from src.server_log_analysis import filter_successful_requests, count_requests_by_ip
+from src.server_log_analysis import count_requests_by_ip, filter_successful_requests
 
 
 class TestServerLogAnalysis:

@@ -1,10 +1,7 @@
 import random
-from typing import List, Tuple
 
 
-def kmeans_clustering(
-    points: List[Tuple[float, float]], k: int, max_iter: int = 100
-) -> List[int]:
+def kmeans_clustering(points: list[tuple[float, float]], k: int, max_iter: int = 100) -> list[int]:
     """
     Perform K-means clustering on 2D points.
 
@@ -27,7 +24,7 @@ def kmeans_clustering(
 
     # Initialize centroids randomly from the points
     centroids = random.sample(points, k)
-    clusters: List[int] = []
+    clusters: list[int] = []
 
     for _ in range(max_iter):
         # Assign each point to the nearest centroid
@@ -43,9 +40,7 @@ def kmeans_clustering(
         # Calculate new centroids
         new_centroids = []
         for cluster_id in range(k):
-            cluster_points = [
-                points[i] for i, c in enumerate(clusters) if c == cluster_id
-            ]
+            cluster_points = [points[i] for i, c in enumerate(clusters) if c == cluster_id]
             if cluster_points:
                 avg_x = sum(p[0] for p in cluster_points) / len(cluster_points)
                 avg_y = sum(p[1] for p in cluster_points) / len(cluster_points)

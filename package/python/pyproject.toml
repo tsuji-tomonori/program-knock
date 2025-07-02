@@ -9,3 +9,41 @@ dependencies = [
     "pytest>=8.4.1",
     "ruff>=0.12.1",
 ]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"           # 文字列にダブルクォートを使用
+indent-style = "space"           # インデントにスペースを使用
+skip-magic-trailing-comma = false # 末尾のカンマを自動追加
+line-ending = "auto"             # 改行コードを自動検出
+
+[tool.mypy]
+python_version = "3.12"          # Python 3.12を対象とする
+warn_return_any = true           # Any型の戻り値に警告
+warn_unused_configs = true       # 未使用の設定に警告
+disallow_untyped_defs = true     # 型注釈なし関数定義を禁止
+disallow_incomplete_defs = true  # 不完全な型定義を禁止
+check_untyped_defs = true        # 型注釈なし関数の中身もチェック
+disallow_untyped_decorators = true # 型注釈なしデコレータを禁止
+no_implicit_optional = true      # Optional型の明示を要求
+warn_redundant_casts = true      # 冗長なキャストに警告
+warn_unused_ignores = true       # 未使用のtype: ignoreに警告
+warn_no_return = true            # return文なし関数に警告
+warn_unreachable = true          # 到達不可能コードに警告
+strict_equality = true           # 厳密な等価性チェック
+extra_checks = true              # 追加のチェックを有効化

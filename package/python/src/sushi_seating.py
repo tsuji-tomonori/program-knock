@@ -1,8 +1,7 @@
-from typing import List
 from collections import deque
 
 
-def sushi_seating(commands: List[str]) -> List[str]:
+def sushi_seating(commands: list[str]) -> list[str]:
     """
     回転寿司屋の席案内システムを実装する関数。
 

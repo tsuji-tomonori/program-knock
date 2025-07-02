@@ -1,4 +1,4 @@
-from src.count_connections import Param, Log, count_connections
+from src.count_connections import Log, Param, count_connections
 
 
 def test_basic():
@@ -101,7 +101,8 @@ def test_large_connect_and_disconnect():
     """
     非常に多くの接続が行われ、その後すべて切断されるケースのテスト。
     end_time=100, period=10 で一気に大量の接続があり、その後すべて切断される状況をテスト。
-    最終的にすべての接続が切断され、結果として [0, 10**10, 10**10, 10**10, 0, 0, 0, 0, 0, 0, 0] が期待される。
+    最終的にすべての接続が切断され、
+    結果として [0, 10**10, 10**10, 10**10, 0, 0, 0, 0, 0, 0, 0] が期待される。
     """
     param = Param(
         end_time=100,

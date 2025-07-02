@@ -1,4 +1,5 @@
 import re
+
 from src.calculate_new_year_holiday import calculate_new_year_holiday
 
 
@@ -67,7 +68,8 @@ def test_year_2021():
 def test_year_2020():
     """
     テストケース: 2020年
-    基本期間 2019-12-29 ～ 2020-01-03 に加え、前日 2019-12-28（土）と翌日 2020-01-04,05（土・日）が追加される
+    基本期間 2019-12-29 ～ 2020-01-03 に加え、前日 2019-12-28（土）と
+    翌日 2020-01-04,05（土・日）が追加される
     → 休暇期間: 2019-12-28 ～ 2020-01-05, 休暇日数: 9日
     """
     result = calculate_new_year_holiday(2020)

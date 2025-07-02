@@ -123,7 +123,7 @@ class TestSushiSeating:
             commands.append(f"arrive Customer{i:04d}")
 
         # 100人ずつ10回に分けて席案内
-        for i in range(10):
+        for _i in range(10):
             commands.append("seat 100")
 
         result = sushi_seating(commands)

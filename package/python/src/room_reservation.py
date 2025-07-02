@@ -1,4 +1,4 @@
-from typing import NamedTuple, List, Dict
+from typing import NamedTuple
 
 
 class Reservation(NamedTuple):
@@ -8,11 +8,11 @@ class Reservation(NamedTuple):
 
 
 class RoomReservation:
-    def __init__(self):
+    def __init__(self) -> None:
         """会議室予約システムの初期化"""
         # Dict to store reservations for each room
         # Key: room_id, Value: List of (start_time, end_time) tuples
-        self.reservations: Dict[int, List[tuple[int, int]]] = {}
+        self.reservations: dict[int, list[tuple[int, int]]] = {}
 
     def request_reservation(self, reservation: Reservation) -> bool:
         """

@@ -16,7 +16,8 @@ def count_sales(sales: list[Sale]) -> dict[tuple[str, str, str], int]:
         sales (list[Sale]): 売上データのリスト
 
     Returns:
-        dict[tuple[str, str, str], int]: (店舗名, 支払い方法, 商品名) をキーとし、売上数量を値とする辞書
+        dict[tuple[str, str, str], int]: (店舗名, 支払い方法, 商品名)
+            をキーとし、売上数量を値とする辞書
     """
     results: dict[tuple[str, str, str], int] = {}
     for sale in sales:

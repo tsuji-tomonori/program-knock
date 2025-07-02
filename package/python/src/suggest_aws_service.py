@@ -1,7 +1,7 @@
 import functools
 
 
-@functools.lru_cache(maxsize=None)
+@functools.cache
 def levenshtein_distance(s: str, t: str) -> int:
     """
     2つの文字列 s, t のレーベンシュタイン距離（編集距離）を再帰とメモ化を用いて求める関数。

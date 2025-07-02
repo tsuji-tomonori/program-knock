@@ -50,7 +50,10 @@ def test_code_snippet():
 
 def test_mixed_inline_formatting():
     md = "A *italic* word, a **bold** word, and a `code` snippet together."
-    expected = "<p>A <em>italic</em> word, a <strong>bold</strong> word, and a <code>code</code> snippet together.</p>"
+    expected = (
+        "<p>A <em>italic</em> word, a <strong>bold</strong> word, "
+        "and a <code>code</code> snippet together.</p>"
+    )
     assert markdown_to_html(md) == expected
 
 
@@ -118,12 +121,16 @@ def test_complex_multiple_occurrences():
         "This is the third paragraph with **strong4**, *italic4*, and `code4`."
     )
     expected = (
-        "<h1>Heading One with <strong>strong1</strong> and <em>italic1</em> and <code>code1</code>.</h1>\n"
-        "<p>This is the first paragraph with <strong>strong2</strong>, <em>italic2</em>, and <code>code2</code>.</p>\n"
-        "<h2>Heading Two with <strong>strong3</strong> and <em>italic3</em> and <code>code3</code>.</h2>\n"
+        "<h1>Heading One with <strong>strong1</strong> and <em>italic1</em> "
+        "and <code>code1</code>.</h1>\n"
+        "<p>This is the first paragraph with <strong>strong2</strong>, "
+        "<em>italic2</em>, and <code>code2</code>.</p>\n"
+        "<h2>Heading Two with <strong>strong3</strong> and <em>italic3</em> "
+        "and <code>code3</code>.</h2>\n"
         "<p>This is the second paragraph without inline formatting.</p>\n"
         "<h3>Heading Three</h3>\n"
-        "<p>This is the third paragraph with <strong>strong4</strong>, <em>italic4</em>, and <code>code4</code>.</p>"
+        "<p>This is the third paragraph with <strong>strong4</strong>, "
+        "<em>italic4</em>, and <code>code4</code>.</p>"
     )
     assert markdown_to_html(md) == expected
 

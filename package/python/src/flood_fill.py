@@ -1,6 +1,4 @@
-def flood_fill(
-    image: list[list[int]], sr: int, sc: int, new_color: int
-) -> list[list[int]]:
+def flood_fill(image: list[list[int]], sr: int, sc: int, new_color: int) -> list[list[int]]:
     """
     画像内の特定の領域を、新しい色で塗りつぶす。
 
