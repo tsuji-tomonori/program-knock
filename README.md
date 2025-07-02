@@ -10,8 +10,8 @@
 
 | カテゴリ番号 | カテゴリ名 | 説明 | 問題1 | 問題2 |
 |-------------|-------------|---------------------------------------------------|----------------|----------------|
-| 01 | 組み込み関数 | 言語標準の組み込み関数を活用する問題 | [工程能力指数の計算](docs/01_組み込み関数/practice_01.md)<br>calc_cpk / CalcCpk | [年齢分布の集計](docs/01_組み込み関数/practice_02.md)<br>age_statistics / AgeStatistics |
-| 02 | リストの操作 | 配列やリストの操作と処理に関する問題 | [ラングトンのアリ](docs/02_リストの操作/practice_01.md)<br>simulate_langtons_ant / SimulateLangtonsAnt | [ライフゲーム](docs/02_リストの操作/practice_02.md)<br>life_game / LifeGame |
+| 01 | 組み込み関数 | 言語標準の組み込み関数を活用する問題 | [工程能力指数の計算](docs/01_組み込み関数/problems/01A_calc_cpk.md)<br>calc_cpk / CalcCpk | [年齢分布の集計](docs/01_組み込み関数/problems/01B_age_statistics.md)<br>age_statistics / AgeStatistics |
+| 02 | リストの操作 | 配列やリストの操作と処理に関する問題 | [ラングトンのアリ](docs/02_リストの操作/problems/practice_01.md)<br>simulate_langtons_ant / SimulateLangtonsAnt | [ライフゲーム](docs/02_リストの操作/problems/practice_02.md)<br>life_game / LifeGame |
 | 03 | データ構造_リスト | リスト構造を使用したアルゴリズムの問題 | [時間単位での接続数の集計](docs/03_データ構造_リスト/practice_01.md)<br>count_connections / CountConnections | [クラスタリングの実装](docs/03_データ構造_リスト/practice_02.md)<br>kmeans_clustering / KmeansClustering |
 | 04 | データ構造_辞書 | キーバリュー型データ構造を活用した問題 | [単語の出現回数のカウント](docs/04_データ構造_辞書/practice_01.md)<br>count_word_frequencies / CountWordFrequencies | [LRUキャッシュの実装](docs/04_データ構造_辞書/practice_02.md)<br>lru_cache / LruCache |
 | 05 | データ構造_タプル | イミュータブルな順序付きデータ構造の問題 | [商品ごとの売上集計](docs/05_データ構造_タプル/practice_01.md)<br>count_sales / CountSales | [サーバーログの解析](docs/05_データ構造_タプル/practice_02.md)<br>server_log_analysis / ServerLogAnalysis |
