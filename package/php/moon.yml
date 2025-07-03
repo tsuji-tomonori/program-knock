@@ -1,0 +1,29 @@
+language: php
+type: application
+tasks:
+  install:
+    command: php ~/composer.phar install --ignore-platform-reqs
+    options:
+      cache: false
+
+  lint:
+    command: php ~/composer.phar run lint
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.php'
+      - 'tests/**/*.php'
+
+  test:
+    command: php ~/composer.phar run test
+    deps:
+      - ~:install
+    inputs:
+      - 'src/**/*.php'
+      - 'tests/**/*.php'
+
+  check:
+    description: "Run lint and tests"
+    deps:
+      - ~:lint
+      - ~:test

@@ -9,6 +9,7 @@ projects:
   typescript: 'package/typescript'
   go: 'package/go'
   rust: 'package/rust'
+  php: 'package/php'
 vcs:
   manager: 'git'
   defaultBranch: 'main'
