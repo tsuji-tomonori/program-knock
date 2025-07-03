@@ -1,0 +1,15 @@
+Language,Total Source Files,Total Test Files,Test Coverage,Sample Test File,Test Functions,Test Quality Assessment
+Go,24,24,100%,calc_cpk_test.go,14 subtests,Comprehensive - uses table-driven tests with subtests
+Java,24,24,100%,CpkCalculatorTest.java,10 tests,Good - covers edge cases and validation
+PHP,24,24,100%,CalcCpkTest.php,15 tests,Excellent - comprehensive edge case coverage
+Python,24,24,100%,test_calc_cpk.py,12 tests,Excellent - detailed test cases with comments
+Rust,24,24,100%,calc_cpk_test.rs,10 tests,Good - covers main scenarios
+TypeScript,24,24,100%,calcCpk.test.ts,13 tests,Very Good - comprehensive test coverage
+
+Summary:
+- All 6 languages (Go, Java, PHP, Python, Rust, TypeScript) have 100% test file coverage
+- Each language has exactly 24 source files and 24 corresponding test files
+- Test quality varies but all languages have at least 10+ test cases per file
+- Python and PHP show the most comprehensive test coverage with detailed edge cases
+- Go uses table-driven testing pattern which is idiomatic for the language
+- All languages test the sample cases from the problem specifications

@@ -1,0 +1,26 @@
+Problem,Go,Java,PHP,Python,Rust,TypeScript,Description
+age_statistics,✓,✓,✓,✓,✓,✓,Age-based statistical analysis
+calc_cpk,✓,✓,✓,✓,✓,✓,Process Capability Index (Cpk) calculation
+calculate_new_year_holiday,✓,✓,✓,✓,✓,✓,New Year holiday calculation
+count_connections,✓,✓,✓,✓,✓,✓,Network connection counting
+count_in_range,✓,✓,✓,✓,✓,✓,Range-based counting
+count_sales,✓,✓,✓,✓,✓,✓,Sales data aggregation
+count_word_frequencies,✓,✓,✓,✓,✓,✓,Word frequency analysis
+fake_chinese_checker,✓,✓,✓,✓,✓,✓,Chinese checker game logic
+find_closest_value,✓,✓,✓,✓,✓,✓,Nearest value search
+flood_fill,✓,✓,✓,✓,✓,✓,Flood fill algorithm
+hit_and_blow,✓,✓,✓,✓,✓,✓,Hit and Blow game (Mastermind-like)
+kmeans_clustering,✓,✓,✓,✓,✓,✓,K-means clustering algorithm
+life_game,✓,✓,✓,✓,✓,✓,Conway's Game of Life
+lru_cache,✓,✓,✓,✓,✓,✓,Least Recently Used cache
+markdown_to_html,✓,✓,✓,✓,✓,✓,Markdown to HTML converter
+product_deduplication,✓,✓,✓,✓,✓,✓,Product list deduplication
+remove_duplicate_customers,✓,✓,✓,✓,✓,✓,Customer data deduplication
+room_reservation,✓,✓,✓,✓,✓,✓,Meeting room reservation system
+run_length_encoding,✓,✓,✓,✓,✓,✓,Run-length encoding compression
+scope_manager,✓,✓,✓,✓,✓,✓,Variable scope management
+server_log_analysis,✓,✓,✓,✓,✓,✓,Server log analysis
+simulate_langtons_ant,✓,✓,✓,✓,✓,✓,Langton's Ant simulation
+suggest_aws_service,✓,✓,✓,✓,✓,✓,AWS service recommendation
+sushi_seating,✓,✓,✓,✓,✓,✓,Sushi restaurant seating optimization
+TOTAL,24/24,24/24,24/24,24/24,24/24,24/24,100% coverage across all languages
